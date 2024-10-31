@@ -1,0 +1,48 @@
+services:
+  db:
+    image: postgres:14
+    container_name: product_postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgresql
+      POSTGRES_DB: product_db
+    ports:
+      - "5052:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - product_network
+
+  elasticsearch:
+    image: elasticsearch:8.9.1
+    container_name: product_elasticsearch
+    environment:
+      - discovery.type=single-node
+      - ELASTIC_PASSWORD=elastic
+    ports:
+      - "9200:9200"
+    networks:
+      - product_network
+
+  app:
+    build:
+      context: .
+    container_name: product_app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+      - elasticsearch
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/product_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgresql
+      SPRING_ELASTICSEARCH_REST_URIS: http://product_elasticsearch:9200
+    networks:
+      - product_network
+
+volumes:
+  pgdata:
+
+networks:
+  product_network:

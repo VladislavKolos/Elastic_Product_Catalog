@@ -14,11 +14,12 @@ services:
       - product_network
 
   elasticsearch:
-    image: elasticsearch:8.9.1
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.9.1
     container_name: product_elasticsearch
     environment:
       - discovery.type=single-node
       - ELASTIC_PASSWORD=elastic
+      - xpack.security.enabled=false
     ports:
       - "9200:9200"
     networks:
@@ -37,7 +38,9 @@ services:
       SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/product_db
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: postgresql
-      SPRING_ELASTICSEARCH_REST_URIS: http://product_elasticsearch:9200
+      SPRING_ELASTICSEARCH_URIS: http://product_elasticsearch:9200
+      SPRING_ELASTICSEARCH_USERNAME: elastic
+      SPRING_ELASTICSEARCH_PASSWORD: elastic
     networks:
       - product_network
 

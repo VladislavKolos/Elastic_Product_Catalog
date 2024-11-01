@@ -1,25 +1,23 @@
-package org.example.catalog.product.elastic.dto.requestdto;
+package org.example.catalog.product.elastic.model;
 
-import jakarta.persistence.Column;
 import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
-@Getter
-@Setter
-@ToString
+@Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProductRequestDTO {
+public class ProductSkuIndex {
 
+    private int productId;
     private String productName;
-
     private String description;
-
     private BigDecimal price;
-
     private boolean active;
-
     private LocalDate startDate;
+    private String skuCode;
+    private LocalDateTime createdAt;
 }

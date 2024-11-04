@@ -77,12 +77,12 @@ POST http://localhost:8080/api/index/create
 ### Searching Products
 
 To search for products, use this API endpoint:
-GET http://localhost:8080/api/products/search?keyword=<search-term>
+GET http://localhost:8080/api/products/search?keyword=<your-search-term>
 
 1. **Open Postman.**
 2. **Create a new request.**
 3. **Set the method to GET.**
-4. **Enter the URL: http://localhost:8080/api/products/search?keyword=<your-search-term>.**
+4. **Enter the URL: http://localhost:8080/api/products/search?keyword= followed by your desired search term. For example, if you want to search for "product", the complete URL will be http://localhost:8080/api/products/search?keyword=product.**
 5. **Click Send.**
 6. **The response will return a list of products matching the search term.**
 

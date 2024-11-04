@@ -20,7 +20,7 @@ services:
       - discovery.type=single-node
       - xpack.security.enabled=false
     ports:
-      - "9300:9300"
+      - "9200:9200"
     networks:
       - product_network
 
@@ -37,7 +37,7 @@ services:
       SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/product_db
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: postgresql
-      ELASTICSEARCH_HOST: http://product_elasticsearch:9300
+      ELASTICSEARCH_HOST: http://product_elasticsearch:9200
     networks:
       - product_network
 

@@ -24,7 +24,7 @@ Elastic Product Catalog is a project for indexing products from a PostgreSQL dat
 
 ## Features
 
-- Manage products and their SKUs.
+- Index products and their SKUs from a PostgreSQL database into Elasticsearch.
 - Perform search operations using Elasticsearch.
 - Dockerized for seamless deployment.
 

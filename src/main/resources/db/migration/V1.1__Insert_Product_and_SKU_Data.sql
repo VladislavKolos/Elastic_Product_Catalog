@@ -1,4 +1,4 @@
-INSERT INTO Product (name, description, price, active, start_date)
+INSERT INTO Product (product_name, description, price, active, start_date)
 VALUES ('Product 1', 'Description for product 1', 100.00, TRUE, '2023-01-01'),
        ('Product 2', 'Description for product 2', 200.00, TRUE, '2023-02-01'),
        ('Product 3', 'Description for product 3', 150.00, TRUE, '2023-03-01'),

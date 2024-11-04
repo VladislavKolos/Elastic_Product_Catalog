@@ -20,7 +20,7 @@ Elastic Product Catalog is a project for indexing products from a PostgreSQL dat
 - [API Usage](#api-usage)
   - [Loading Products into Elasticsearch](#loading-products-into-elasticsearch)
   - [Searching Products](#searching-products)
-- [Stopping the Application](stopping-the-application)
+- [Stopping the Application](#stopping-the-application)
 
 ## Features
 
